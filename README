@@ -1,7 +1,18 @@
-## Welcome to this Notes Organiser App with AI integrations
+# Smart Notes Organizer
 
-There are 2 seperate folders 'backend' and 'frontend' for ease of use/review
+## Features
+- Add, edit, delete, and search notes
+- AI-powered automatic categorization & summarization
+- Sentiment analysis
 
-The **backend** of this project runs on **'Render'**
-The **frontend** of this project runs on **'Vercel'**
+## Tech Stack
+- Next.js, TailwindCSS (Frontend)
+- Node.js, Express, MongoDB (Backend)
+- Jest, Cypress (Testing)
+- Deployed on Vercel (FE) & Render (BE)
+
+## Installation
+1. `npm install`
+2. `npm run dev`
+
 
