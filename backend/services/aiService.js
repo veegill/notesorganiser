@@ -1,11 +1,23 @@
-const OpenAI = require("openai-api");
-const openai = new OpenAI(process.env.OPENAI_API_KEY);
+import { OpenAI } from 'openai';
 
-exports.summarizeNote = async (content) => {
-  const gptResponse = await openai.complete({
-    engine: "text-davinci-003",
-    prompt: `Summarize this note: ${content}`,
-    maxTokens: 50
-  });
-  return gptResponse.data.choices[0].text.trim();
+const openAI = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const summarizeNote = async (content) => {
+  try {
+    const response = await openAI.completions.create({
+      model: 'text-davinci-003',
+      prompt: `Summarize the following text: ${content}`,
+      max_tokens: 100,
+    });
+    return response.choices[0].text.trim();
+  } catch (error) {
+    console.error('Error summarizing note:', error);
+    return null;
+  }
+};
+
+export default {
+  summarizeNote,
 };
