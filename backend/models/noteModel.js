@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import OpenAI from "aiService";
 
 const noteSchema = new mongoose.Schema(
   {
