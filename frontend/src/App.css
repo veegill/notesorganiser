@@ -1,123 +1,131 @@
-* {
+/* Importing the cute font (Quicksand) from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+/* Global Styles */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif; /* Cute font */
+  background-color: #fdf2f7; /* Very soft, subtle pink background */
+  color: #333; /* Darker text color for better readability */
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f9a8d4, #fbcfe8);
-  color: #333;
-}
-
+/* Styling for the entire App component */
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   text-align: center;
-  padding: 20px;
 }
 
+/* Header Section */
 .App-header {
-  background-color: #fff;
+  background-color: #f8d8e3; /* Soft pastel pink background */
+  color: #333; /* Dark text color for readability */
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #5d3f6a;
-  margin-bottom: 20px;
+/* Styling for the Logo (if applicable) */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.note-input {
-  display: flex;
-  margin-bottom: 20px;
+/* Paragraph Text */
+.App p {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin: 10px 0;
+  color: #333; /* Dark text for better readability */
 }
 
-.input-field {
-  width: 70%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s;
+/* Links */
+.App-link {
+  color: #333; /* Dark text for readability */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.input-field:focus {
-  border-color: #f9a8d4;
+.App-link:hover {
+  color: #f8c8d2; /* Lighter pink on hover */
 }
 
-.add-button {
-  padding: 12px 20px;
-  margin-left: 10px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #f9a8d4;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.add-button:hover {
-  background-color: #d084ab;
-}
-
-.note-list {
-  margin-top: 30px;
-}
-
-.note-list h2 {
-  font-size: 1.5rem;
-  color: #5d3f6a;
-  margin-bottom: 10px;
-}
-
-.empty-message {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.note-item {
-  background-color: #fff;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.note-item span {
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.delete-button {
-  background-color: #f9a8d4;
+/* Styling for buttons */
+button {
+  background-color: #f3a9c4; /* Soft pink */
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 8px;
-  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1.1em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.delete-button:hover {
-  background-color: #d084ab;
+button:hover {
+  background-color: #f8c8d2; /* Slightly lighter pink on hover */
 }
+
+/* Styling for a Loader or any other container */
+.loaderContainer {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Styling for Notes Section (so they don't clash with the background) */
+.notes-container {
+  background-color: #f9e1e8; /* Very light pink, soft contrast to background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Styling for individual notes with border and better readability */
+.note {
+  background-color: #ffffff; /* White background for notes */
+  color: #333; /* Darker text for readability */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
+  border: 2px solid #f3a9c4; /* Light coral border around notes */
+}
+
+/* Adjusting the container for better layout in smaller screens */
+@media (max-width: 600px) {
+  .App-header {
+    width: 100%;
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+
+  .notes-container {
+    padding: 10px;
+  }
+
+  .note {
+    font-size: 1em;
+  }
+}
+
