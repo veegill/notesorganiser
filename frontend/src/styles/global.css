@@ -26,3 +26,15 @@ body {
     background-color: darkblue;
   }
   
+  /* styles/global.css */
+:root {
+  --light-pink: #ffe4e1;
+  --white: #ffffff;
+  /* Additional color variables */
+}
+
+body {
+  background-color: var(--light-pink);
+  color: var(--white);
+  /* Additional styling */
+}
