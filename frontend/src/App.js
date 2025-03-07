@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState("");
+  const [summarizedNote, setSummarizedNote] = useState(""); // Store summarized note
 
   const addNote = () => {
     if (note.trim() !== "") {
@@ -17,10 +18,26 @@ function App() {
     setNotes(newNotes);
   };
 
+  const summarizeNote = async (note) => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/summarize`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ note }),
+      });
+      const data = await response.json();
+      setSummarizedNote(data.summary); // Update the summarized note
+    } catch (error) {
+      console.error("Error summarizing the note:", error);
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Notes Organizer</h1>
+        <h1>Notes Organizer with AI</h1>
 
         <div className="note-input">
           <input
@@ -47,11 +64,22 @@ function App() {
                   <button onClick={() => deleteNote(index)} className="delete-button">
                     ✖
                   </button>
+                  <button onClick={() => summarizeNote(note)} className="summarize-button">
+                    Summarize
+                  </button>
                 </li>
               ))}
             </ul>
           )}
         </div>
+
+        {/* Show the summarized note */}
+        {summarizedNote && (
+          <div className="summarized-note">
+            <h3>Summarized Note:</h3>
+            <p>{summarizedNote}</p>
+          </div>
+        )}
       </header>
     </div>
   );
