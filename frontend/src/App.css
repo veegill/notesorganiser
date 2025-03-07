@@ -1,16 +1,14 @@
-/* Importing the cute font (Quicksand) from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 /* Global Styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif; /* Cute font */
-  background-color: #fdf2f7; /* Very soft, subtle pink background */
-  color: #333; /* Darker text color for better readability */
+  font-family: 'Quicksand', sans-serif; 
+  background-color: #fdf2f7; 
+  color: #333; 
 }
 
-/* Styling for the entire App component */
 .App {
   display: flex;
   flex-direction: column;
@@ -20,10 +18,9 @@ body {
   text-align: center;
 }
 
-/* Header Section */
 .App-header {
-  background-color: #f8d8e3; /* Soft pastel pink background */
-  color: #333; /* Dark text color for readability */
+  background-color: #f8d8e3; 
+  color: #333; 
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
@@ -32,23 +29,16 @@ body {
   margin: 20px;
 }
 
-/* Styling for the Logo (if applicable) */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 /* Paragraph Text */
 .App p {
   font-size: 1.2em;
   font-weight: 300;
   margin: 10px 0;
-  color: #333; /* Dark text for better readability */
+  color: #333; 
 }
 
-/* Links */
 .App-link {
-  color: #333; /* Dark text for readability */
+  color: #333; 
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -72,10 +62,9 @@ button {
 }
 
 button:hover {
-  background-color: #f8c8d2; /* Slightly lighter pink on hover */
+  background-color: #f8c8d2; 
 }
 
-/* Styling for a Loader or any other container */
 .loaderContainer {
   text-align: center;
   padding: 30px;
@@ -86,9 +75,8 @@ button:hover {
   margin: 0 auto;
 }
 
-/* Styling for Notes Section (so they don't clash with the background) */
 .notes-container {
-  background-color: #f9e1e8; /* Very light pink, soft contrast to background */
+  background-color: #f9e1e8; 
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -97,19 +85,17 @@ button:hover {
   max-width: 600px;
 }
 
-/* Styling for individual notes with border and better readability */
 .note {
-  background-color: #ffffff; /* White background for notes */
-  color: #333; /* Darker text for readability */
+  background-color: #ffffff; 
+  color: #333; 
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 15px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
   font-size: 1.1em;
-  border: 2px solid #f3a9c4; /* Light coral border around notes */
+  border: 2px solid #f3a9c4; 
 }
 
-/* Adjusting the container for better layout in smaller screens */
 @media (max-width: 600px) {
   .App-header {
     width: 100%;
