@@ -21,6 +21,6 @@ mongoose
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
   const cors = require("cors");
-app.use(cors()); // This enables all domains to access the API
+app.use(cors());
 
 
