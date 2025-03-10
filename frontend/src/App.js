@@ -37,14 +37,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Notes Organizer with AI</h1>
+        <h1>AI Integrated Notes Organizer</h1>
 
         <div className="note-input">
           <input
             type="text"
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="Enter your note"
+            placeholder="Enter your note here!"
             className="input-field"
           />
           <button onClick={addNote} className="add-button">
@@ -53,9 +53,9 @@ function App() {
         </div>
 
         <div className="note-list">
-          <h2>Your Notes</h2>
+          <h2>Your Notes: </h2>
           {notes.length === 0 ? (
-            <p className="empty-message">No notes yet! Add some.</p>
+            <p className="empty-message">No notes yet! Add some below...</p>
           ) : (
             <ul>
               {notes.map((note, index) => (
@@ -65,7 +65,13 @@ function App() {
                     ✖
                   </button>
                   <button onClick={() => summarizeNote(note)} className="summarize-button">
-                    Summarize
+                    AI Summarisation
+                  </button>
+                  <button onClick={() => sentimentNote(note)} className="sentiment-button">
+                    AI Sentiment
+                  </button>
+                  <button onClick={() => categorisationNote(note)} className="categorisation-button">
+                    AI categorisation
                   </button>
                 </li>
               ))}
